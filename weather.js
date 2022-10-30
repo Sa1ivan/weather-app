@@ -84,6 +84,7 @@ form.addEventListener("submit", getWeather); */
 /*   form = document.querySelector(".form__submit"),
   input = document.querySelector(".input"),
   btn = document.querySelector(".btn"), */
+
 window.addEventListener("load", () => {
   const weather = document.querySelector(".weather"),
     temp = document.querySelector(".temp"),

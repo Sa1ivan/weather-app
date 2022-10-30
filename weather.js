@@ -84,33 +84,33 @@ form.addEventListener("submit", getWeather); */
 /*   form = document.querySelector(".form__submit"),
   input = document.querySelector(".input"),
   btn = document.querySelector(".btn"), */
+window.addEventListener("load", () => {
+  const weather = document.querySelector(".weather"),
+    temp = document.querySelector(".temp"),
+    feels = document.querySelector(".feels"),
+    city = document.querySelector(".city");
 
-const weather = document.querySelector(".weather"),
-  temp = document.querySelector(".temp"),
-  feels = document.querySelector(".feels"),
-  city = document.querySelector(".city");
-
-const getMyPosition = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-
-      getInfo(latitude, longitude);
-    });
-  }
-};
-const getInfo = async (latitude, longitude) => {
-  const request = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ac8312e9e2bb7a4d11aca228f9e6c236&lang=ru&units=metric`
-  );
-  const result = await request.json();
-  city.innerHTML = `Город - ${result.name}.\n`;
-  temp.innerHTML = `Температура равна ${Math.round(
-    result.main.temp
-  )} градусам цельсия.\n`;
-  feels.innerHTML = `Ощущается как ${Math.round(
-    result.main["feels_like"]
-  )} градусов цельсия из-за влажности в ${result.main.humidity}%\n.`;
-  weather.innerHTML = `Погода - ${result.weather[0].description}.\n`;
-};
-getMyPosition();
+  const getMyPosition = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        getInfo(latitude, longitude);
+      });
+    }
+  };
+  const getInfo = async (latitude, longitude) => {
+    const request = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ac8312e9e2bb7a4d11aca228f9e6c236&lang=ru&units=metric`
+    );
+    const result = await request.json();
+    city.innerHTML = `Город - ${result.name}.\n`;
+    temp.innerHTML = `Температура равна ${Math.round(
+      result.main.temp
+    )} градусам цельсия.\n`;
+    feels.innerHTML = `Ощущается как ${Math.round(
+      result.main["feels_like"]
+    )} градусов цельсия из-за влажности в ${result.main.humidity}%\n.`;
+    weather.innerHTML = `Погода - ${result.weather[0].description}.\n`;
+  };
+  getMyPosition();
+});

@@ -104,14 +104,10 @@ window.addEventListener("load", () => {
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ac8312e9e2bb7a4d11aca228f9e6c236&lang=ru&units=metric`
     );
     const result = await request.json();
-    city.innerHTML = `Город - ${result.name}.\n`;
-    temp.innerHTML = `Температура равна ${Math.round(
-      result.main.temp
-    )} градусам цельсия.\n`;
-    feels.innerHTML = `Ощущается как ${Math.round(
-      result.main["feels_like"]
-    )} градусов цельсия из-за влажности в ${result.main.humidity}%\n.`;
-    weather.innerHTML = `Погода - ${result.weather[0].description}.\n`;
+    city.innerHTML = result.name;
+    temp.innerHTML = Math.round(result.main.temp);
+    feels.innerHTML = Math.round(result.main["feels_like"]);
+    weather.innerHTML = result.weather[0].description;
   };
   getMyPosition();
 });

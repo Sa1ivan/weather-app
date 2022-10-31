@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "BanderaPro";
+  src: url("../BanderaPro/BanderaPro.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "BanderaPro-Bold";
+  src: url("../BanderaPro/BanderaPro-Bold.ttf") format("truetype");
+  font-style: bold;
+  font-weight: bold;
+}

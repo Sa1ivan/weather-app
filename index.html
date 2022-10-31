@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./images/icon.png" type="image/png" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>Weather</title>
+  </head>
+  <body class="page">
+    <div class="page__container">
+      <div class="information">
+        <div class="information__container">
+          <span>Город - <span class="city info">London</span></span>
+          <span>Погода - <span class="weather info">Снег</span></span>
+          <span
+            >Температура - <span class="temp info">27</span> градусов °C</span
+          >
+          <span
+            >Ощущается как - <span class="feels info">29</span> градусов
+            °C</span
+          >
+        </div>
+        <div class="information__icons">
+<!--           <img class="information__icon" src="./images/sun.svg" alt="weather" /> -->
+          <div class="information__btn"></div>
+        </div>
+      </div>
+      <div class="submit">
+        <form name="form" class="submit__form" action="#">
+          <input
+            class="submit__input"
+            name="city"
+            type="text"
+            placeholder="Введите город..."
+          />
+          <button class="submit__btn" type="submit" name="btn-submit"></button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./scripts/weather.js"></script>
+  </body>
+</html>

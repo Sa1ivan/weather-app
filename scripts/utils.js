@@ -3,6 +3,7 @@ export const utils = {
   temp: document.querySelector(".temp"),
   feels: document.querySelector(".feels"),
   city: document.querySelector(".city"),
+  btn: document.querySelector(".information__btn"),
 };
 
 export const formSetting = {
